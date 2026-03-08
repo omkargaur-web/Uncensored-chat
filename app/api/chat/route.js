@@ -1,17 +1,15 @@
-import { callAI } from '@/lib/ai';  // ✅ ये सही है
-
-// ... rest of the code same rahega
+import { callAI } from '@/lib/ai';
 
 export async function POST(req) {
   try {
     const { message } = await req.json();
-    
+
     const messages = [
-      { role: "user", content: message }
+      { role: 'user', content: message }
     ];
-    
+
     const reply = await callAI(messages);
-    
+
     return new Response(JSON.stringify({ reply }), {
       headers: { 'Content-Type': 'application/json' }
     });
