@@ -9,7 +9,6 @@ export default function Home() {
   const [loading, setLoading] = useState(false);
   const [analysis, setAnalysis] = useState('');
 
-  // Chat ke liye
   const handleSendMessage = async (message) => {
     setLoading(true);
     setMessages([...messages, { role: 'user', content: message }]);
@@ -30,7 +29,6 @@ export default function Home() {
     setLoading(false);
   };
 
-  // Screenshot analyze ke liye
   const handleImageSelect = async (base64) => {
     setLoading(true);
     setAnalysis('Analyzing screenshot...');
@@ -55,7 +53,6 @@ export default function Home() {
     <div style={{ maxWidth: '800px', margin: '0 auto', padding: '20px' }}>
       <h1 style={{ textAlign: 'center' }}>🤖 My Uncensored AI App</h1>
 
-      {/* Screenshot Analysis Section */}
       <div style={{ marginBottom: '40px' }}>
         <h2>📸 Screenshot Analysis</h2>
         <ImageUpload onImageSelect={handleImageSelect} />
@@ -67,7 +64,6 @@ export default function Home() {
         )}
       </div>
 
-      {/* Chat Section */}
       <div>
         <h2>💬 Chat</h2>
         <div style={{ minHeight: '300px', marginBottom: '20px' }}>
