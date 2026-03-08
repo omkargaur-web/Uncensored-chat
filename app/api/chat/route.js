@@ -1,4 +1,6 @@
-import { callAI } from '@/lib/ai';
+import { callAI } from '@/lib/ai';  // ✅ ये सही है
+
+// ... rest of the code same rahega
 
 export async function POST(req) {
   try {
